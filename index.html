@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Agency</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>✈ Travelan</h1>
+  <p>Temukan Liburan Impianmu</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Paket</a>
+  <a href="#">Booking</a>
+</nav>
+
+<main>
+
+  <input type="text" id="searchInput" placeholder="Cari paket..." onkeyup="filterData()">
+
+  <!-- KARTU -->
+  <section>
+    <h2>Paket Wisata Populer</h2>
+    <div id="cardContainer" class="card-container"></div>
+  </section>
+
+  <!-- FORM -->
+ <section class="form-section">
+  <h2>✈ Pemesanan Paket Wisata</h2>
+
+  <form id="bookingForm" class="booking-card">
+
+    <div class="input-group">
+      <label>Nama Lengkap</label>
+      <input type="text" id="nama" required>
+      <small id="errNama"></small>
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" id="email" required>
+      <small id="errEmail"></small>
+    </div>
+
+    <div class="input-group">
+      <label>No HP</label>
+      <input type="number" id="telp" required>
+      <small id="errTelp"></small>
+    </div>
+
+    <div class="input-group">
+      <label>Pilih Paket</label>
+      <select id="paketSelect" required>
+        <option value="">-- Pilih Paket --</option>
+        <option value="Bali">Bali</option>
+        <option value="Lombok">Lombok</option>
+        <option value="Raja Ampat">Raja Ampat</option>
+      </select>
+      <small id="errPaket"></small>
+    </div>
+
+    <div class="input-group">
+      <label>Jumlah Orang</label>
+      <input type="number" id="jumlah" min="1" required>
+    </div>
+
+    <div class="input-group">
+  <label>Tanggal Keberangkatan</label>
+  <input type="date" id="tanggal" required>
+  <small id="errTanggal"></small>
+</div>
+
+    <div class="input-group">
+      <label>Metode Pembayaran</label>
+      <div class="radio-group">
+        <label><input type="radio" name="bayar" value="Transfer"> Transfer</label>
+        <label><input type="radio" name="bayar" value="Cash"> Cash</label>
+      </div>
+      <small id="errBayar"></small>
+    </div>
+
+    <div class="total-box">
+      <p>Total Harga: <span id="totalHarga">Rp 0</span></p>
+    </div>
+
+    <button type="submit" class="btn">Pesan Sekarang</button>
+  </form>
+</section>
+
+  <!-- TAMBAH DATA -->
+  <section class="add-section">
+    <h2>Tambah Paket Baru</h2>
+    <input type="text" id="newItem" placeholder="Nama paket">
+    <button onclick="tambahItem()" class="btn">Tambah</button>
+  </section>
+
+</main>
+
+<section class="contact-section">
+  <h2>Contact Kami</h2>
+
+  <div class="contact-container">
+    <div class="contact-card">
+      <h3>📍 Alamat</h3>
+      <p>Medan, Indonesia</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>✉️ Email</h3>
+      <p>Travelan@gmail.com</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>📞 Telepon</h3>
+      <p>0838-7018-3534</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div>
+      <h3>Travelan</h3>
+      <p>Travel terpercaya untuk liburan terbaik anda</p>
+    </div>
+
+    <div>
+      <h3>Menu</h3>
+      <p>Home</p>
+      <p>Paket</p>
+      <p>Booking</p>
+    </div>
+
+    <div>
+      <h3>Follow Us</h3>
+      <p>🌐 📱 📷</p>
+    </div>
+
+  </div>
+
+  <p class="copyright">© 2026 Travelan</p>
+</footer>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
